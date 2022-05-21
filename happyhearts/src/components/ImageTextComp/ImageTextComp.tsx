@@ -1,6 +1,6 @@
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
-import image from "../../assets/temp1.jpg"
 interface Props {
     header?: string,
     image?: string,
@@ -21,7 +21,8 @@ const ImageTextComp: React.FC<Props> = ({header, image, text}) => {
         </Paragraph>
       </Column>
       <Column>
-        <img src={image} />
+        <Image  src={require(`assets/${image}`)} /> 
+
       </Column>
     </Row>
     </Container>

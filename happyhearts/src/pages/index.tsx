@@ -9,7 +9,6 @@ const Home: NextPage = () => {
     <MainContainer>
       <Column>
         <ImageTextComp header='Volunteering' text='Through volunteering efforts we want to bring moments of joy to the most vurnerable in our society....' image='temp1.jpg'/>
-        <ImageTextComp header='collaboration' text='collaboratge'/>
       </Column>
     </MainContainer>
 );
