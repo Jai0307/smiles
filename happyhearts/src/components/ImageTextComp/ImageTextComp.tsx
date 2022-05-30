@@ -21,8 +21,10 @@ const ImageTextComp: React.FC<Props> = ({header, image, text}) => {
         </Paragraph>
       </Column>
       <Column>
+      {image?
         <Image  src={require(`assets/${image}`)} /> 
-
+        :<></>
+      }
       </Column>
     </Row>
     </Container>
