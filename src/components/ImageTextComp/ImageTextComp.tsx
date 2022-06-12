@@ -6,9 +6,10 @@ interface Props {
     image?: string,
     text?: string,
     width?: string,
+    left?: boolean,
 }
 
-const ImageTextComp: React.FC<Props> = ({header, image, text, width}) => {
+const ImageTextComp: React.FC<Props> = ({header, image, text, width, left}) => {
 
   useEffect(() => {
 
@@ -16,19 +17,30 @@ const ImageTextComp: React.FC<Props> = ({header, image, text, width}) => {
   return (
     <Container>
     <Row>
+      {left?
     <Column>
       {image?
         <Image  src={require(`assets/${image}`)} width={width} height={"200px"}/> 
         :<></>
       }
       </Column>
+      :<></>
+    }
       <Column>
       <Header>{header}</Header>
         <Paragraph>
             {text}
         </Paragraph>
       </Column>
-
+      {!left?
+    <Column>
+      {image?
+        <Image  src={require(`assets/${image}`)} width={width} height={"200px"}/> 
+        :<></>
+      }
+      </Column>
+      :<></>
+    }
     </Row>
     </Container>
   )
