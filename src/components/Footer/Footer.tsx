@@ -5,27 +5,20 @@ const Footer: React.FC = () => {
   return (
     <FooterContainer>
       <FooterLinks>
-        <StyledLink
-          href={
-            '/blogs/blogs-list'
-          }
-        >
-          Team
+        <StyledLink href={'/team' } rel="noreferrer nofollow">
+            Team
         </StyledLink>
         
-        {/* <StyledLink
-          href={'/'}
-          rel="noreferrer nofollow"
-          target="_blank"
-        >
-          Discord
-        </StyledLink> */}
+        <StyledLink href={'/volunteer'} rel="noreferrer nofollow">
+          Volunteer
+        </StyledLink>
         <StyledLink href={'/terms-of-service'} rel="noreferrer nofollow">
           Terms
         </StyledLink>
         <StyledLink href={'/privacy-policy'} rel="noreferrer nofollow">
           Privacy
         </StyledLink>
+
       </FooterLinks>
     </FooterContainer>
   )
@@ -39,6 +32,7 @@ const FooterContainer = styled.div`
   height: 50px;
   padding: 5px;
   color: #ffffff;
+  background-color: #e1a6a6;
   @media (max-width: 770px) {
     flex-direction: column;
     align-items: center;
@@ -52,14 +46,14 @@ const FooterLinks = styled.div`
   align-items: center;
   // margin: 5px;
   flex-wrap: wrap;
-  color: #ffffff;
+  color: #000000;
   &:hover {
   }
 `
 
 const StyledLink = styled.a`
   text-decoration: none;
-  color: #ffffff;
+  color: #000000;
   margin: 5px 20px;
   padding: 5px;
   border-radius: 3px;

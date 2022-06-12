@@ -49,7 +49,6 @@ const MenuContainer = styled.div`
   color: #ffffff;
 
 `
-
 const StyledNavBar = styled.div`
   align-items: center;
   color: #ffffff;
@@ -65,7 +64,6 @@ const StyledNavBarInner = styled.div`
     flex-direction: column;
   }
 `
-
 const LogoText = styled.div`
   color: #000000;
   font-size: 45px;
