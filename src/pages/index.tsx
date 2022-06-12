@@ -4,12 +4,11 @@ import Image from 'next/image'
 import styled from 'styled-components';
 import ImageTextComp from 'components/ImageTextComp/';
 
-const Team: NextPage = () => {
+const Home: NextPage = () => {
   return (
     <MainContainer>
       <Column>
-        <ImageTextComp header='Jai Singh' text='Jai is a senior at Plano West Senior High'/>
-        <ImageTextComp header='Jazmine Singh' text='Jazmine is a junior at Plano Senior High'/>
+        <ImageTextComp header='Volunteering' text='Through volunteering efforts wegctfcvtfcvft want to bring moments of joy to the most vurnerable in our society....' image='temp1.jpg'/>
       </Column>
     </MainContainer>
 );
@@ -18,7 +17,6 @@ const Team: NextPage = () => {
 const MainContainer = styled.div`
 display: flex;
 min-height: 85vh;
-color: #000000;
 @media (max-width: 770px) {
 flex-direction: column;
 }
@@ -44,4 +42,4 @@ const Header = styled.h3`
 color: #000000;
 `;
 
-export default Team
+export default Home

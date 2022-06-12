@@ -5,27 +5,30 @@ interface Props {
     header?: string,
     image?: string,
     text?: string,
+    width?: string,
 }
 
-const ImageTextComp: React.FC<Props> = ({header, image, text}) => {
+const ImageTextComp: React.FC<Props> = ({header, image, text, width}) => {
+
   useEffect(() => {
 
   }, [])
   return (
     <Container>
     <Row>
+    <Column>
+      {image?
+        <Image  src={require(`assets/${image}`)} width={width} height={"200px"}/> 
+        :<></>
+      }
+      </Column>
       <Column>
       <Header>{header}</Header>
         <Paragraph>
             {text}
         </Paragraph>
       </Column>
-      <Column>
-      {image?
-        <Image  src={require(`assets/${image}`)} /> 
-        :<></>
-      }
-      </Column>
+
     </Row>
     </Container>
   )
@@ -49,7 +52,7 @@ const Column = styled.div`
   flex: 1;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
+  color: #000000;
   @media (max-width: 770px) {
     padding: 20px 50px;
   }

@@ -53,6 +53,7 @@ const MenuContainer = styled.div`
 const StyledNavBar = styled.div`
   align-items: center;
   color: #ffffff;
+  background-color: #e1a6a6;
 `
 const StyledNavBarInner = styled.div`
   display: flex;
