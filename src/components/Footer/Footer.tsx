@@ -5,19 +5,22 @@ const Footer: React.FC = () => {
   return (
     <FooterContainer>
       <FooterLinks>
+      <StyledLink href={'/' } rel="noreferrer nofollow">
+            Home
+        </StyledLink>
         <StyledLink href={'/team' } rel="noreferrer nofollow">
             Team
         </StyledLink>
         
         <StyledLink href={'/volunteer'} rel="noreferrer nofollow">
-          Volunteer
+          Contact
         </StyledLink>
-        <StyledLink href={'/terms-of-service'} rel="noreferrer nofollow">
+        {/* <StyledLink href={'/terms-of-service'} rel="noreferrer nofollow">
           Terms
         </StyledLink>
         <StyledLink href={'/privacy-policy'} rel="noreferrer nofollow">
           Privacy
-        </StyledLink>
+        </StyledLink> */}
 
       </FooterLinks>
     </FooterContainer>
@@ -44,16 +47,15 @@ const FooterLinks = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  // margin: 5px;
   flex-wrap: wrap;
-  color: #000000;
+  color: #ffffff;
   &:hover {
   }
 `
 
 const StyledLink = styled.a`
   text-decoration: none;
-  color: #000000;
+  color: #ffffff;
   margin: 5px 20px;
   padding: 5px;
   border-radius: 3px;

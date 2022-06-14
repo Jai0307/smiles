@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
 import MessageModal from '../MessageModal';
+import InputComp from 'components/Inputcomp';
+import TextboxComp from 'components/TextboxComp';
 import { validateEmail } from '../../utils/format';
 
 interface Props {
@@ -47,34 +49,25 @@ const ContactComp: React.FC<Props> = ({}) => {
   }
 
   return (
-    <Container>
-        <MessageModal header={modalheader} message={modalmessage} state={modalstate} handleClose={()=>{setmodalstate(false)}}/>
-    <Row>
+    <>
+      <MessageModal header={modalheader} message={modalmessage} state={modalstate} handleClose={()=>{setmodalstate(false)}}/>
       <Column>
-      <Header>Contact Us</Header>
-      <Input placeholder='name' onChange={(e)=>{setname(e.target.value)}}/>
-      <Input placeholder='email' onChange={(e)=>{setemail(e.target.value)}}/>
-      <Textarea placeholder='Enter your message' onChange={(e)=>{setmessage(e.target.value)}}/>
-
-
+        <Header>Contact Us</Header>
+        <InputComp placeholder='name' onChange={(e)=>{setname(e.target.value)}} id={`nameid`} value={name}/>
+        <InputComp placeholder='email' onChange={(e)=>{setemail(e.target.value)}} id={`emailid`} value={email}/>
+        {/* <Textarea placeholder='Enter your message' onChange={(e)=>{setmessage(e.target.value)}}/> */}
+        <TextboxComp placeholder='Enter your message' onChange={(e)=>{setmessage(e.target.value)}} id={"tbid"} value={message} cols={25} rows={10}/>
         <Button onClick={send}>Send</Button>
       </Column>
-    </Row>
-    </Container>
+    </>
   )
 }
 
-
-const Container = styled.div`
-    margin: 50px 0;
-    min-height: 250px;
-`;
 
 const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
-
 const Column = styled.div`
   padding: 10px;
   display: flex;
@@ -82,24 +75,16 @@ const Column = styled.div`
   flex: 1;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
   @media (max-width: 770px) {
     padding: 20px 50px;
   }
 `;
-
 const Header = styled.div`
     padding: 10px;
     font-weight: 700;
     font-size: 40px;
     justify-content: flex-end;
 `;
-
-const Paragraph = styled.p`
-  font-size: 15px;
-  line-height: 2;
-  font-weight: 500;
-`
 const Button = styled.div`
   margin: 5px;
   display: flex;
@@ -112,27 +97,14 @@ const Button = styled.div`
   font-weight: 700;
   border-radius: 3px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-  background-color: #4D2FA2;
+  background-color: #e1a6a6;
   min-width: 75px;
   transition: ease 0.5s;
+  color: white;
   &:hover {
     font-weight: 700;
     background-color: #212122;
   }
-`
-const ButtonDiv = styled.div`
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`;
-const Input = styled.input`
-  padding: 10px;
-  background-color: #eee;
-  border: 1px solid black;
-  margin: 10px;
-  width: 250px;
-  border-radius: 3px;
 `
 const Textarea = styled.textarea`
   padding: 10px;

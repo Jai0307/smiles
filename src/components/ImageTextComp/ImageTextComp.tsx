@@ -79,9 +79,9 @@ const Header = styled.div`
 `;
 
 const Paragraph = styled.p`
-  font-size: 15px;
+  font-size: 16px;
   line-height: 2;
-  font-weight: 500;
+  font-weight: 300;
 `
 const Button = styled.div`
   margin: 5px;
@@ -95,7 +95,7 @@ const Button = styled.div`
   font-weight: 700;
   border-radius: 3px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-  background-color: #4D2FA2;
+  background-color: #e1a6a6;
   min-width: 75px;
   transition: ease 0.5s;
   &:hover {

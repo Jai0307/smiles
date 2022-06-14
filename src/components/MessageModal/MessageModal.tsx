@@ -110,7 +110,7 @@ const CloseIcon = styled.div`
   padding: 5px 10px;
   margin: 10px;
   border-radius: 3px;
-  background-color: #4D2FA2;
+  background-color: #e1a6a6;
   color: white;
   transition: ease 0.5s;
   &:hover{
