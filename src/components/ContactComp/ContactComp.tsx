@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import MessageModal from '../MessageModal';
 import InputComp from 'components/Inputcomp';
 import TextboxComp from 'components/TextboxComp';
+import axios from 'axios';
 import { validateEmail } from '../../utils/format';
 
 interface Props {
@@ -43,6 +44,23 @@ const ContactComp: React.FC<Props> = ({}) => {
         openmodal("Error", "Message is too short.");
         return;
       }
+
+    const body = JSON.stringify({ name: name, email: email, message: message })
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
+
+      axios.post("/api/sendemail", body, config).then((res)=>{
+        console.log(`res ${JSON.stringify(res.data)}`);
+        openmodal("Message sent", "Your message has been sent.");
+        setname('');
+        setemail('');
+        setmessage('');
+      }).catch(error=>{
+        console.log(`error ${error}`);
+      })
       // sendEmail(process.env.CONTACT_EMAIL, `user message from ${name}, email: ${email}`, message).then(()=>{
       //     openmodal('Message', 'Your message has been sent!')
       // })
