@@ -10,7 +10,7 @@ const Volunteer: NextPage = () => {
     <MainContainer>
       <Column>
         <Header>Volunteer</Header>
-        <Paragraph>Support our efforts in bringing smile to people in our community. If you are a school you can teach your students that even the smallest acts of kindness can have a huge impact on a person's day by participating in our card drive. Their act of kindness can uplift people and bring some more joy into their lives. You can also volunteer to become a Happy Hearts Friend and spend time with a resident in a participating nursing home. </Paragraph>
+        <Paragraph>Support our efforts in bringing smile to people in our community. If you are a school you can teach your students that even the smallest acts of kindness can have a huge impact on a person&#39;s day by participating in our card drive. Their act of kindness can uplift people and bring some more joy into their lives. You can also volunteer to become a Happy Hearts Friend and spend time with a resident in a participating nursing home. </Paragraph>
         <ContactComp />
       </Column>
 
