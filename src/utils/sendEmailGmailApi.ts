@@ -33,14 +33,6 @@ const sendEmailGmailApi = async (body: any, sender: string) => {
   var Gmail_ClientSecret = serverRuntimeConfig.gmailclientsecret;
   var Gmail_Port = serverRuntimeConfig.gmailport || "3000";
 
-    console.log("Gmail_ClientID", Gmail_ClientID);
-    console.log("Gmail_ClientSecret", Gmail_ClientSecret);
-    console.log("Gmail_Port", Gmail_Port);
-    // TOKEN_PATH = path.join(__dirname, "./gmailcontacttoken.json");
-    // Gmail_ClientID = process.env.Gmail_Contact_ClientID;
-    // Gmail_ClientSecret = process.env.Gmail_Contact_ClientSecret;
-    // Gmail_Port = process.env.Gmail_Contact_Port || "3002";
-
   // Load client secrets from a local file.
   const { client_id, client_secret, redirect_uris } = {
     client_id: Gmail_ClientID,
