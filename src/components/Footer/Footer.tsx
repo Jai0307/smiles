@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
             Team
         </StyledLink>
         
-        <StyledLink href={'/volunteer'} rel="noreferrer nofollow">
+        <StyledLink href={'/contact'} rel="noreferrer nofollow">
           Contact
         </StyledLink>
         {/* <StyledLink href={'/terms-of-service'} rel="noreferrer nofollow">
@@ -35,7 +35,7 @@ const FooterContainer = styled.div`
   height: 50px;
   padding: 5px;
   color: #ffffff;
-  background-color: #e1a6a6;
+  background-color: #9b111e;
   @media (max-width: 770px) {
     flex-direction: column;
     align-items: center;

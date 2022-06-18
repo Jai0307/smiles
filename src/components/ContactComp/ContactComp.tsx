@@ -115,7 +115,7 @@ const Button = styled.div`
   font-weight: 700;
   border-radius: 3px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-  background-color: #e1a6a6;
+  background-color: #9b111e;
   min-width: 75px;
   transition: ease 0.5s;
   color: white;

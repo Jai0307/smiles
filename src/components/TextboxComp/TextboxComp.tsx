@@ -61,7 +61,7 @@ const Label = styled.label`
     padding: 5px;
     font-size: 10px;
     font-weight: 700;
-    color: #e1a6a6;
+    color: #9b111e;
     height: 25px;
     margin: 0;
 `

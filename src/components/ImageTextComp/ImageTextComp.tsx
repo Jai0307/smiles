@@ -8,9 +8,10 @@ interface Props {
     width?: string,
     height?:string,
     left?: boolean,
+    contactlink?: boolean,
 }
 
-const ImageTextComp: React.FC<Props> = ({header, image, text, width, height, left}) => {
+const ImageTextComp: React.FC<Props> = ({header, image, text, width, height, left, contactlink}) => {
 
   useEffect(() => {
 
@@ -31,6 +32,7 @@ const ImageTextComp: React.FC<Props> = ({header, image, text, width, height, lef
       <Header>{header}</Header>
         <Paragraph>
             {text}
+            {contactlink?<span><Link href="/contact">contact us</Link>.</span>:<></>}
         </Paragraph>
       </Column>
       {!left?
@@ -47,6 +49,12 @@ const ImageTextComp: React.FC<Props> = ({header, image, text, width, height, lef
   )
 }
 
+const Link = styled.a`
+  color: blue;
+  &:hover{
+    text-decoration: underline;
+  }
+`;
 
 const Container = styled.div`
     margin: 50px 0;
@@ -55,7 +63,9 @@ const Container = styled.div`
 
 const Row = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  @media(max-width: 770px){
+    flex-direction: column;
+  }
 `;
 
 const Column = styled.div`
@@ -95,7 +105,7 @@ const Button = styled.div`
   font-weight: 700;
   border-radius: 3px;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-  background-color: #e1a6a6;
+  background-color: #9b111e;
   min-width: 75px;
   transition: ease 0.5s;
   &:hover {
