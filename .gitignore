@@ -34,3 +34,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 src/utils/config.json
+src/utils/credentials.json
