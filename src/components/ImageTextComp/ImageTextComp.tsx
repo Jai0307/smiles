@@ -86,6 +86,7 @@ const Header = styled.div`
     font-weight: 700;
     font-size: 40px;
     justify-content: flex-end;
+    text-align: center;
 `;
 
 const Paragraph = styled.p`
