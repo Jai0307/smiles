@@ -1,6 +1,6 @@
-import type { NextPage } from "next";
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
+
 
 interface CompProps {
     id: string;
@@ -12,7 +12,7 @@ interface CompProps {
     rows: any;
 }
 
-const InputComp: React.FC<CompProps> = ({
+const TextboxComp: React.FC<CompProps> = ({
     id,
     value,
     onChange,
@@ -28,7 +28,7 @@ const InputComp: React.FC<CompProps> = ({
     }, [])
 
     return (
-        <TextareaDiv onFocus={()=>setfocused(true)} onBlur={()=>setfocused(false)} >
+        <TextareaDiv onFocus={()=>setfocused(true)} onBlur={()=>setfocused(false)} style={{width:width?`${width}px`:"250px"}}>
             {(focused||value!="")&&<Label htmlFor={id}>{placeholder}</Label>}
             <Textarea placeholder={focused?"":placeholder} value={value} onChange={onChange} id={id} cols={cols} rows={rows}/>
         </TextareaDiv>
@@ -40,30 +40,31 @@ const TextareaDiv = styled.div`
     margin: 10px;
     flex-direction: column;
     background-color: #eee;
-    border-bottom: 1px solid black;
-    padding: 0;
+    border-radius: 5px;
+    border: 1px solid black;
     justify-content: center;
     opacity: 0.8;
-    padding: 10px;
+    height: 150px;
     &:hover{
         opacity: 1;
     }
 `
 const Textarea = styled.textarea`
-    padding: 0 10px;
+    padding: 10px;
     margin: 0px;
     border: none;
     outline: none;
     background-color: transparent;
+    height: 135px;
     width: 100%;
 `
 const Label = styled.label`
     padding: 5px;
     font-size: 10px;
     font-weight: 700;
-    color: #9b111e;
+    color: #0F2557;
     height: 25px;
     margin: 0;
 `
 
-export default InputComp
+export default TextboxComp;
