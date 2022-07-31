@@ -2,6 +2,7 @@ import React from "react";
 import { GetServerSideProps } from 'next';
 import fs from 'fs';
 import path from 'path';
+import { formatDate } from "utils/format";
 
 export default function Sitemap() {}
 
@@ -58,10 +59,21 @@ const GetPathsFromBuildFolder = (dir: string, urlList: Array<Url>, host: string,
 
 const GetUrlElement = ({ host, route, date }: Url): string => {
   if (date) {
-    return `<url><loc>${host}${route}</loc><lastmod>${date}</lastmod></url>`;
-  } else return `<url><loc>${host}${route}</loc></url>`;
+    return `<url>
+      <loc>${host}${route}</loc>
+      <changefreq>weekly</changefreq>
+      <lastmod>${date}</lastmod>
+      </url>`;
+  } else{
+    let dt = new Date();
+    let datedt = formatDate(new Date(dt.getFullYear(), dt.getMonth(), 1), 'Y-M-d')
+    return `<url>
+    <loc>${host}${route}</loc>
+    <changefreq>weekly</changefreq>
+    <lastmod>${datedt}</lastmod>
+    </url>`;
+  }
 };
-
 const GetSitemapXml = (urls: Array<Url>): string => `<?xml version="1.0" encoding="UTF-8"?>
     <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     ${urls.map((url) => GetUrlElement(url)).join('')}
@@ -73,7 +85,7 @@ type Url = {
   date?: Date;
 };
 
-const excludedRoutes: Array<string> = ['/sitemap.xml', '/404'];
+const excludedRoutes: Array<string> = ['/sitemap.xml', '/404', '.js', '_document', '_app'];
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   const basePath: string = process.cwd();
@@ -85,8 +97,22 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   routes = routes.concat(GetPathsFromBuildFolder(pagesPath, [], host, pagesPath));
 
   routes = routes.filter((el) => !excludedRoutes.includes(el.route));
-  const sitemap: string = GetSitemapXml(routes);
+  const finalroutes = new Array<Url>();
+    for(let i=0; i<routes.length; i++){
+      let exclude = false;
+      for(let j=0; j<excludedRoutes.length; j++){
+        if(routes[i].route.toString().includes(excludedRoutes[j]))
+        {
+          exclude = true;
+          break;
+        }
+      }
+      if(!exclude){
+        finalroutes.push(routes[i]);
+      }
+    }
 
+  const sitemap: string = GetSitemapXml(finalroutes);
   res.setHeader('Content-Type', 'text/xml');
   res.write(sitemap);
   res.end();
