@@ -19,8 +19,10 @@ const Volunteer: NextPage = () => {
         <ImageContainer>
           <Image src={ACMImage}/>
         </ImageContainer> */}
+        <ImageTextComp header={`Skaggs Elementary School`} image={'skaggs.jpg'} left={true}/>
         <ImageTextComp header={`Amazing Children's Montessori`} image={'ACMimage.jpg'} />
         <ImageTextComp header={`KIDS USA Montessori`} image={'kidsUSA1.png'} left={true}/>
+
 
       </Column>
 
