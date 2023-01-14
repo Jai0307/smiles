@@ -9,6 +9,7 @@ const nextConfig = {
     gmailport: process.env.Gmail_Port,
     adminemail: process.env.ADMIN_EMAIL,
     srcpath: process.env.SRC_PATH,
+    sib_apikey: process.env.sib_apikey
   },
   publicRuntimeConfig: {
   },
